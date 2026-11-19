@@ -1,0 +1,240 @@
+:root {
+    --cor-primaria: #003d3d;
+    --cor-destaque: #007a7a;
+    --cor-destaque-suave: #e6f2f2;
+    --cor-link: #007a7a;
+    --cor-fundo: #f0f7f7;
+    --cor-superficie: #ffffff;
+    --cor-texto: #1f2937;
+    --cor-texto-suave: #4b6b6b;
+    --cor-borda: #d5e5e5;
+    --cor-rodape: #001f1f;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--cor-texto);
+    line-height: 1.5;
+    margin: 0;
+}
+
+a {
+    color: var(--cor-link);
+}
+
+
+.pagina {
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 1.5rem;
+    grid-template-areas:
+        "header  header"
+        "main    aside"
+        "footer  footer";
+}
+
+.cabecalho     { grid-area: header; }
+.conteudo      { grid-area: main; }
+.barra-lateral { grid-area: aside; }
+.rodape        { grid-area: footer; }
+
+.cabecalho,
+.rodape,
+.barra-lateral,
+.conteudo {
+    padding: 1.5rem;
+}
+
+
+.cabecalho {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.cabecalho h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.menu a {
+    color: #e2eeee;
+    text-decoration: none;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.menu a:hover {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+
+.conteudo > p {
+    margin-top: 0;
+    color: var(--cor-texto-suave);
+}
+
+.conteudo h2 {
+    margin: 1.5rem 0 1rem;
+    color: var(--cor-primaria);
+    padding-left: 0.75rem;
+    border-left: 4px solid var(--cor-destaque);
+}
+
+.conteudo section:first-of-type h2 {
+    margin-top: 0;
+}
+
+
+.grade-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-top: 3px solid var(--cor-destaque);
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 61, 61, 0.15);
+}
+
+.card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+}
+
+.card h3 a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.card h3 a:hover {
+    color: var(--cor-link);
+    text-decoration: underline;
+}
+
+.card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+}
+
+
+.barra-lateral {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    align-self: start;
+    font-size: 0.9rem;
+}
+
+.barra-lateral h2 {
+    margin: 1.25rem 0 0.5rem;
+    padding-bottom: 0.4rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--cor-texto-suave);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.barra-lateral h2:first-child {
+    margin-top: 0;
+}
+
+.barra-lateral p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
+}
+
+.barra-lateral ul,
+.barra-lateral ol {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.barra-lateral > ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.barra-lateral li {
+    padding: 0.25rem 0;
+}
+
+.barra-lateral li > ul,
+.barra-lateral li > ol {
+    margin-top: 0.25rem;
+}
+
+.barra-lateral a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.barra-lateral a:hover {
+    color: var(--cor-link);
+    text-decoration: underline;
+}
+
+
+.barra-lateral > ul > li:first-child {
+    background-color: var(--cor-destaque-suave);
+    border-left: 4px solid var(--cor-destaque);
+    padding: 0.4rem 0.75rem;
+    border-radius: 0 4px 4px 0;
+}
+
+
+.rodape {
+    background-color: var(--cor-rodape);
+    color: #cde5e5;
+    text-align: center;
+}
+
+.rodape p {
+    margin: 0;
+}
+
+
+@media (max-width: 768px) {
+    .pagina {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+    }
+}

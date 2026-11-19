@@ -4,41 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu Portfólio de Programação Web</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="../../index.html">← Voltar ao Portfólio Central</a>
-  <h1>Meu Portfólio de Programação Web</h1>
-  <p>Repositório de atividades práticas e documentação da disciplina.</p>
+  <div class="pagina">
 
-  <h2>Menu Principal</h2>
-  <ul>
-    <li><strong>Início (Você está aqui)</strong></li>
-    <li><a href="referencias.html">Material de Referência HTML</a></li>
+    <header class="cabecalho">
+      <h1>Portfólio de Programação Web</h1>
+      <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="referencias.html">Referências</a>
+        <a href="#documentacao">Documentação</a>
+        <a href="#laboratorios">Laboratórios</a>
+      </nav>
+    </header>
 
-    <li>Registros de Sala de Aula (Markdown):
+    <main class="conteudo">
+      <p>Repositório de atividades práticas e documentação da disciplina.</p>
+
+      <section id="laboratorios">
+        <h2>Laboratórios</h2>
+        <div class="grade-cards">
+          <article class="card">
+            <h3><a href="lab/01/index.html">Lab 01</a></h3>
+            <p>Formulário e estrutura semântica em HTML.</p>
+          </article>
+          <article class="card">
+            <h3><a href="lab/02/index.html">Lab 02</a></h3>
+            <p>Aprimoramento de semântica em HTML.</p>
+          </article>
+          <article class="card">
+            <h3><a href="lab/03/index.html">Lab 03</a></h3>
+            <p>Acessibilidade, estruturação e segurança na incorporação de componentes de terceiros.</p>
+          </article>
+          <article class="card">
+            <h3><a href="lab/04/index.html">Lab 04</a></h3>
+            <p>Refatoração de formulário legado e envio de arquivos binários.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="documentacao">
+        <h2>Registros de Aula</h2>
+        <div class="grade-cards">
+          <article class="card">
+            <h3><a href="doc/pratica-01.md">Registro da Prática 01</a></h3>
+            <p>Memória de desenvolvimento da Semana 1.</p>
+          </article>
+          <article class="card">
+            <h3><a href="doc/comandos-git.md">Guia de Comandos Git</a></h3>
+            <p>Resumo dos comandos Git usados nas aulas.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="barra-lateral">
+      <h2>Menu Principal</h2>
       <ul>
-        <li><a href="doc/pratica-01.html">Registro da Prática 01</a></li>
-        <li><a href="doc/comandos-git.html">Guia de Comandos Git</a></li>
-      </ul>
-    </li>
-
-    <li>Trilhas de Laboratório:
-      <ol>
-        <li><strong>Módulo 1: Estrutura (HTML)</strong>
+        <li><strong>Início (Você está aqui)</strong></li>
+        <li><a href="referencias.html">Material de Referência HTML</a></li>
+        <li>Registros de Sala de Aula (Markdown):
           <ul>
-            <li><a href="lab/01/index.html">Lab 01</a></li>
-            <li><a href="lab/02/index.html">Lab 02</a></li>
-            <li><a href="lab/03/index.html">Lab 03</a></li>
-            <li><a href="lab/04/index.html">Lab 04</a></li>
+            <li><a href="doc/pratica-01.md">Registro da Prática 01</a></li>
+            <li><a href="doc/comandos-git.md">Guia de Comandos Git</a></li>
           </ul>
         </li>
-      </ol>
-    </li>
-  </ul>
+        <li>Trilhas de Laboratório:
+          <ol>
+            <li><strong>Módulo 1: Estrutura (HTML)</strong>
+              <ul>
+                <li><a href="lab/01/index.html">Lab 01</a></li>
+                <li><a href="lab/02/index.html">Lab 02</a></li>
+                <li><a href="lab/03/index.html">Lab 03</a></li>
+                <li><a href="lab/04/index.html">Lab 04</a></li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+      </ul>
 
-  <hr>
+      <h2>Status do Projeto</h2>
+      <p>Este site consolida as implementações práticas (HTML) e a documentação técnica (Markdown) elaborada durante as aulas.</p>
+    </aside>
 
-  <h2>Status do Projeto</h2>
-  <p>Este site consolida tanto as implementações práticas (HTML) quanto a documentação técnica (Markdown) elaborada durante as aulas.</p>
+    <footer class="rodape">
+      <p>&copy; 2026 Guilherme Freire — Portfólio de Programação Web</p>
+    </footer>
+
+  </div>
 </body>
 </html>
